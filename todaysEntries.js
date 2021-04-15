@@ -9,19 +9,22 @@ The function should return: ``` Johny,Sun ```. Please note that the names are se
 
 function todaysEntries(entries) {
   // Complete the function
+  //Get todays date and stores in todaysDate
   td = new Date();
   todaysDate = td.getFullYear() + "-" + td.getMonth() + 1 + "-" + td.getDate();
   let nameArray = [];
 
-  //Get date array
+  //Get date from the data logs
   for (let i = 0; i < entries.length; i++) {
     let newArray = entries[i].date;
     let ad = new Date(newArray);
     dateArray = ad.getFullYear() + "-" + ad.getMonth() + 1 + "-" + ad.getDate();
+    //compares the date in data with todays date
     if (dateArray === todaysDate) {
       nameArray.push(entries[i].name);
     }
   }
+  //returns the name in string format
   return nameArray.toString();
 }
 
